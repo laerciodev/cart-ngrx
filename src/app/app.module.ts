@@ -10,7 +10,8 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { StoreModule } from '@ngrx/store';
-import { cartReducer } from './reducers/cart.reducer';
+// import { cartReducer } from './reducers/cart.reducer';
+import { counterReducer } from './reducers/counter.reducer';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,9 +21,9 @@ import { cartReducer } from './reducers/cart.reducer';
     IonicModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
-    StoreModule.forRoot(
-      { cart: cartReducer },
-      {})],
+    StoreModule.forRoot({
+      counter: counterReducer
+    })],
   providers: [
     StatusBar,
     SplashScreen,
