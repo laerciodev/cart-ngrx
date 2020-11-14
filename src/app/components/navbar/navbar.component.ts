@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Store, select } from '@ngrx/store';
+import { Store } from '@ngrx/store';
 import { CartModel } from 'src/app/models/cart.model';
 
 @Component({
@@ -11,9 +11,7 @@ import { CartModel } from 'src/app/models/cart.model';
 export class NavbarComponent implements OnInit {
   cart$: Observable<CartModel>;
 
-  constructor(
-    private store: Store<{ cart: CartModel }>
-  ) {
+  constructor(private store: Store<{ cart: CartModel}>) {
     this.cart$ = store.select('cart');
   }
 

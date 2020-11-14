@@ -13,6 +13,7 @@ import { StoreModule } from '@ngrx/store';
 // import { cartReducer } from './reducers/cart.reducer';
 import { counterReducer } from './reducers/counter.reducer';
 import { reducer } from './reducers/scoreboard.reducer';
+import { cartReducer } from './reducers/cart.reducer';
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,7 +25,8 @@ import { reducer } from './reducers/scoreboard.reducer';
     HttpClientModule,
     StoreModule.forRoot({
       counter: counterReducer,
-      game: reducer
+      game: reducer,
+      cart: cartReducer
     })],
   providers: [
     StatusBar,

@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { ToastController } from '@ionic/angular';
-import { Add } from 'src/app/actions/card.action';
 import { DataService } from 'src/app/data.service';
 import { CartModel } from 'src/app/models/cart.model';
 import { ProductModel } from 'src/app/models/product.model';
+import { Observable } from 'rxjs';
+import { add, remove, clear } from '../../actions/cart.action';
 
 @Component({
   selector: 'app-product-list',
@@ -12,14 +13,16 @@ import { ProductModel } from 'src/app/models/product.model';
   styleUrls: ['./product-list.component.scss'],
 })
 export class ProductListComponent implements OnInit {
-
+  public cart$: Observable<CartModel>;
   public products: ProductModel[];
 
   constructor(
     private store: Store<{ cart: CartModel }>,
     private service: DataService,
     private toastController: ToastController
-    ) {}
+    ) {
+      this.cart$ = store.select('cart');
+    }
 
   ngOnInit() {
     this.service.getProducts().subscribe( data => this.products = data);
@@ -27,7 +30,7 @@ export class ProductListComponent implements OnInit {
 
   add(product: ProductModel) {
     // dispatch invoca uma ação
-    this.store.dispatch(Add(product));
+    this.store.dispatch(add({ product }));
     this.showToast(product.title);
   }
 
