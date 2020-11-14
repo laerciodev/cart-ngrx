@@ -30,3 +30,8 @@ app-product-list {
   height: 100vh;
   overflow-y: scroll;
 }
+
+.grid {
+  display: flex;
+  flex-direction: column;
+}

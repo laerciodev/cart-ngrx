@@ -1,0 +1,4 @@
+<button (click)="loadMovies()">buscar filmes</button>
+<div *ngFor="let movie of movies$ | async">
+  {{ movie.name }}
+</div>

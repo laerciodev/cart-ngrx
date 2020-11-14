@@ -10,6 +10,8 @@ import { NavbarComponent } from '../components/navbar/navbar.component';
 import { ProductListComponent } from '../components/product-list/product-list.component';
 import { CounterComponent } from '../components/counter/counter.component';
 import { ScoreboardComponent } from '../components/scoreboard/scoreboard.component';
+import { ShoppingCartComponent } from '../components/shopping-cart/shopping-cart.component';
+import { MoviesComponent } from '../components/movies/movies.component';
 
 @NgModule({
   imports: [
@@ -23,7 +25,9 @@ import { ScoreboardComponent } from '../components/scoreboard/scoreboard.compone
     NavbarComponent,
     ProductListComponent,
     CounterComponent,
-    ScoreboardComponent
+    ScoreboardComponent,
+    ShoppingCartComponent,
+    MoviesComponent
   ]
 })
 export class HomePageModule {}

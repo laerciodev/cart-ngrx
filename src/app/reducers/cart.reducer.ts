@@ -29,10 +29,12 @@ const _cartReducer = createReducer(
     }),
     on(remove, (state, { product }) => {
         const index = state.products.indexOf(product);
-        state.products.splice(index, 1);
         return {
             ...initialState,
-            products: state.products,
+            products: [
+                ...state.products.slice(0, index),
+                ...state.products.slice(index + 1)
+            ],
             total: calculateTotal(state.products)
         };
     }),
