@@ -9,6 +9,7 @@ import { HomePageRoutingModule } from './home-routing.module';
 import { NavbarComponent } from '../components/navbar/navbar.component';
 import { ProductListComponent } from '../components/product-list/product-list.component';
 import { CounterComponent } from '../components/counter/counter.component';
+import { ScoreboardComponent } from '../components/scoreboard/scoreboard.component';
 
 @NgModule({
   imports: [
@@ -21,7 +22,8 @@ import { CounterComponent } from '../components/counter/counter.component';
     HomePage,
     NavbarComponent,
     ProductListComponent,
-    CounterComponent
+    CounterComponent,
+    ScoreboardComponent
   ]
 })
 export class HomePageModule {}
